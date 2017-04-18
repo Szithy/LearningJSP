@@ -29,4 +29,27 @@
   	<param-value>root</param-value>
   </context-param>
   
+  <servlet>
+  	<servlet-name>errorHandler</servlet-name>
+  	<jsp-file>/error.jsp</jsp-file>
+  	<init-param>
+  		<param-name>errorMessage</param-name>
+  		<param-value>ERROR occurred!</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>imageUrl</param-name>
+  		<param-value>images/error.png</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>errorHandler</servlet-name>
+  	<url-pattern>/error.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error.jsp</location>
+  </error-page>
+  
 </web-app>
